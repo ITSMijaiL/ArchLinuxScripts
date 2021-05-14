@@ -1,5 +1,10 @@
 #EXECUTE THIS AFTER CHROOTING INTO THE W.I.P. SYSTEM!
 
+#Install dhcpcd otherwhise we will not have net lol
+pacman -S --noconfirm dhcpcd
+
+systemctl enable dhcpcd
+
 #Set the time zone
 ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
 
