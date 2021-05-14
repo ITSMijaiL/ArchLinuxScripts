@@ -19,8 +19,17 @@ pacman -S --noconfirm xfce4
 
 pacman -S --noconfirm firefox
 pacman -S --noconfirm sudo
+pacman -S --noconfirm xorg-xinit
+
+cat > /home/$username_useradd/.profile << "EOF"
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+EOF
 
 #Make xinitrc so that xfce4 executes on boot
 cat > /home/$username_useradd/.xinitrc << "EOF"
 exec startxfce4
 EOF
+
+echo "You're good to go! Restart to boot into xfce4."
