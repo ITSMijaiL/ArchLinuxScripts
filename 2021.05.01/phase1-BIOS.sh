@@ -11,7 +11,7 @@ mount /dev/sda2 /mnt
 
 swapon /dev/sda1
 
-pacstrap /mnt base linux linux-firmware
+pacstrap /mnt base linux linux-firmware curl wget
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
