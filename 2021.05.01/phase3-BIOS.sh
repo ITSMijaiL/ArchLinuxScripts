@@ -32,6 +32,8 @@ cat > /home/$username_useradd/.xinitrc << "EOF"
 exec startxfce4
 EOF
 
+Xorg :0 -configure
+
 passwd $username_useradd #Remember that we need a password to login!
 
 echo "You're good to go! Restart to boot into xfce4."
