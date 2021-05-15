@@ -27,9 +27,11 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 fi
 EOF
 
-#Make xinitrc so that xfce4 executes on boot
+#Make xinitrc so that xfce4 executes on boot but only when we logon into our user
 cat > /home/$username_useradd/.xinitrc << "EOF"
 exec startxfce4
 EOF
+
+passwd $username_useradd #Remember that we need a password to login!
 
 echo "You're good to go! Restart to boot into xfce4."
