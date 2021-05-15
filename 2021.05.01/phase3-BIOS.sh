@@ -34,6 +34,14 @@ EOF
 
 Xorg :0 -configure #Configure the xorg server
 
+if [ -f /root/xorg.conf.new ]; then
+  mv /root/xorg.conf.new /etc/X11/xorg.conf
+fi
+
+if [ -f /home/$username_useradd/xorg.conf.new ]; then
+  mv /home/$username_useradd/xorg.conf.new /etc/X11/xorg.conf
+fi
+
 passwd $username_useradd #Remember that we need a password to login!
 
 echo "You're good to go! Restart to boot into xfce4."
