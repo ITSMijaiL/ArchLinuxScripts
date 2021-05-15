@@ -32,7 +32,7 @@ cat > /home/$username_useradd/.xinitrc << "EOF"
 exec startxfce4
 EOF
 
-Xorg :0 -configure
+Xorg :0 -configure #Configure the xorg server
 
 passwd $username_useradd #Remember that we need a password to login!
 
