@@ -21,7 +21,7 @@ pacman -S --noconfirm firefox
 pacman -S --noconfirm sudo
 pacman -S --noconfirm xorg-xinit
 
-cat > /home/$username_useradd/profile << "EOF"
+cat > /home/$username_useradd/.bash_profile << "EOF"
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
